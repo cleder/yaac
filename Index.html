@@ -1,0 +1,450 @@
+<HTML>
+<HEAD>
+  <META name="author" content="Christian Ledermann">
+  <META name="description" content="Yet another Arcanoid clone is a breakout style game developed with DELPHI and DGC">
+  <META name="keywords" content="Game DELPHI PASCAL Breakout Arcanoid Sourcecode DGC">
+  <TITLE>YaAc - Yet another Arcanoid clone (Deutsch)</TITLE>
+</HEAD>
+<BODY>
+<H1>
+  YaAC the game
+</H1>
+<P>
+<A HREF="Indexe.html">english version</A>
+<P>
+YaAC - Yet another Arcanoid Clone -&nbsp;ist wie der Name schon sagt ein
+Breakout bzw. Arcanoid artiges Spiel. Alles was zu tun ist, ist mit dem
+Schl&auml;ger den Ball gegen die Steine zu schlagen, die sich dann nach einem
+oder auch mehreren Treffern aufl&ouml;sen. Ein Level ist beendet wenn keine
+Steine mehr &uuml;brig sind.Der Schl&auml;ger wird mit der Maus bewegt. Je
+h&auml;rter (schneller) man schl&auml;gt desto gr&ouml;&szlig;er ist auch
+die Beschleunigung des Balles. Eigentlich ganz einfach, wenn da nicht noch
+ein paar Fallstricke eingebaut w&auml;ren....
+<H2>
+  Lizenz
+</H2>
+<P>
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
+<P>
+YaAC ist Open Source unter der <A HREF="GPL.html">GNU General Public
+License</A>. Um YaAC zu rekompilieren ben&ouml;tigen Sie Delphi (ab Version
+3) und die <A HREF="http://info.ex.ac.uk/~PMBearne/DGC.html">DGC
+Komponenten</A>. F&uuml;r die Mausroutinen habe ich die Unit DirectInputAS
+des
+<A HREF="http://www.delphi-jedi.org/DelphiGraphics/DirectX/DISimple.zip">DISimpleDemos
+</A>von Arne Sch&auml;pers verwendet, die bei
+<A HREF="http://www.delphi-jedi.org/">Delphi-Jedi</A> erh&auml;ltlich sind.
+<P>
+Die Hintergrundbilder wurden erstellt mit
+<A HREF="http://www.users.qwest.net/~sharman1/stile99.htm">Harm's sTile99</A>
+<H2>
+  Download
+</H2>
+<P>
+<A HREF="Yaac10.zip">YaAC 1.0</A>- Das Spiel selbst
+<P>
+<A HREF="mapedit.zip">YaAC Leveleditor </A>- Der wird gebraucht um eigene
+Level zu erstellen. Achtung : Der Leveleditor befindet sich noch in einem
+fr&uuml;hen Betastatus, ist aber durchaus schon verwendbar.
+<P>
+  <HR>
+<H2>
+  Installation
+</H2>
+<P>
+Einfach die Dateien YAAC.EXE und YAAC.HCL in ein beliebiges Verzeichnis kopieren
+und schon kanns losgehen.
+<H2>
+  Systemvoraussetzungen
+</H2>
+<P>
+Leider ist das Spiel recht anspruchsvoll was die Hard und Softwareaustattung
+des Rechners anbelangt (wenn ich bedenke das BOLO auf dem Atari ST mit 8
+MHz und 512 kB Speicher lief). Ein Pentium 200 sollte es schon sein mit Windows
+9x oder 2000 und DirectX 6.1. Eine Soundkarte ist unbedingt erforderlich
+und die Grafikkarte mu&szlig; 640 x 480 in 16 Bit Highcolor aul&ouml;sen
+k&ouml;nnen. Ach ja eine Maus ist auch notwendig.....
+<H2>
+  Steuerung
+</H2>
+<P>
+Der Schl&auml;ger wird mit der Maus gef&uuml;hrt (noch Fragen?).
+<P>
+Mit der Taste "<B>N</B>" startet man ein neues Spiel, mit "<B>S</B>" kann
+man das Spiel speichern (allerdings nur in welchem Level man sich grade befindet
+und den Punktestand), mit "<B>L</B>" l&auml;dt man ein gespeichertes Spiel,
+mit "<B>P</B>" verschafft man sich ne kleine Pause, "<B>Z</B>" zeigt die
+Highscoreliste und mit "<B>ESC</B>" wird das Spiel <I>ohne </I>irgendwelche
+l&auml;stigen <I>Nachfragen</I> beendet. <B>"K" </B>&nbsp;zerst&ouml;rt den
+Ball (falls sich der Ball in irgendeiner Ecke verfangen hat). <B>C</B>heats
+gibts nat&uuml;rlich auch aber veraten will ich sie nicht.
+<H2>
+  Die Statusanzeigen
+</H2>
+<P>
+<IMG SRC="Ball01.gif" ALT="Ball" WIDTH="16" HEIGHT="16"> Die &nbsp;Anzahl
+der Verbleibenden B&auml;lle wird unten am Bildschirm angezeigt.
+<P>
+<IMG SRC="G10.gif" ALT="Schwerkraft" WIDTH="32" HEIGHT="24">Oben links in
+der Ecke wird angezeigt welche Schwerkraft in dem Level herscht. das Kann
+sein 0 also Schwerelosigkeit (wie es ja auch aus dem klassischen Breakout
+bekannt ist) 5 G also eine recht geringe Schwerkraft, 10 G (das entspricht
+von Gef&uuml;hl her etwa der normalen Erdbeschleunigung) und 20 G. Manchmal
+kann es allerdings vorkommen, dass die Schwerkraft von Zeit zu Zeit Richtung
+und St&auml;rke &auml;ndert (ersichtlich an dem Fragezeichen).
+<P>
+<IMG SRC="4x.gif" ALT="3x" WIDTH="32" HEIGHT="24">Angenehm ist es nat&uuml;rlich
+wenn alle Punkte doppelt, dreifach oder vierfach gez&auml;hlt werden.
+<P>
+Desweiteren kann man in der oberen Bildschirmzeile noch seine ereichten Punkte
+sehen, und das Level in dem man sich gerade befindet.
+<H2>
+  Die Steine
+</H2>
+<P>
+Jede Art von Steinen hat so ihre Eigenarten. manche sind massiv, andere
+zerbrechen beim ersten Kontakt, und wieder andere muss man ein paarmal treffen
+damit sie verschwinden. Steine k&ouml;nnen Aktionen ausl&ouml;sen, z.B. die
+Schwerkraft auf eine andere St&auml;rke umschalten, den Ball beschleunigen
+oder verlangsamen, die Gr&ouml;sse des Balls oder Schl&auml;gers &auml;ndern,
+explodieren und vieles mehr. Eine Steinart kann nur vom Schl&auml;ger
+zerst&ouml;rt werden, bei anderen Steinen ist ein Kontakt unbedingt zu vermeiden.
+Magnetsteine ziehen den Ball an und Teleporter versetzen ihn an eine andere
+Stelle.
+<P>
+In einigen der h&ouml;heren Level entwickeln die Steine auch ein reges Eigenleben
+(das ist hier w&ouml;rtlich zu nehmen, der Algorithmus ist n&auml;mlich der
+vom guten alten LIVE). Da kann es schon mal schwierig werden die ein oder
+andere Konstellation aufzul&ouml;sen, da alle 0,7 Sekunden die n&auml;chste
+Generation heranw&auml;chst.
+<P>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    <B>Die Steine im einzelnen</B>
+  </CAPTION>
+  <TR>
+    <TD><IMG SRC="Stone.gif" WIDTH="32" HEIGHT="24" ALT="Einfacher Stein"></TD>
+    <TD>Der einfache Stein. Keine Besonderen Effekte er zerbricht beim ersten
+      Kontakt mit dem Ball</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesolid.gif" WIDTH="32" HEIGHT="24" ALT="Solider Stein"></TD>
+    <TD>Solider Stein. Er kann nicht zerst&ouml;rt werden.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone00g.gif" WIDTH="32" HEIGHT="24" ALT="Zero G"></TD>
+    <TD>schaltet die Schwerkraft ab</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone05g.gif" WIDTH="32" HEIGHT="24" ALT="5 G"></TD>
+    <TD>moderate Schwerkraft an</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone10g.gif" WIDTH="32" HEIGHT="24" ALT="10 G"></TD>
+    <TD>Normale Schwerkraft</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone20g.gif" WIDTH="32" HEIGHT="24" ALT="20 G"></TD>
+    <TD>Hohe Schwerkraft</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone1x.gif" WIDTH="32" HEIGHT="24" ALT="1X"></TD>
+    <TD>Alle Punkte werden einfach gez&auml;hlt</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone2x.gif" WIDTH="32" HEIGHT="24" ALT="2X"></TD>
+    <TD>Ab jetzt werden alle Punkte doppelt</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone3x.gif" WIDTH="32" HEIGHT="24" ALT="3X"></TD>
+    <TD>..dreifach</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone4x.gif" WIDTH="32" HEIGHT="24" ALT="4X"></TD>
+    <TD>.. und vierfach gez&auml;hlt</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone22g.gif" WIDTH="32" HEIGHT="24" ALT="?G"></TD>
+    <TD>Die Schwerkraft wird schwer berechenbar, da sie mal nach hier oder da
+      wirkt...</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneapple.gif" WIDTH="32" HEIGHT="24" ALT="Apple"></TD>
+    <TD>Der Schl&auml;ger schrumpft, aber keine Panik er kommt wieder.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebat.gif" WIDTH="32" HEIGHT="24" ALT="Bat"></TD>
+    <TD>Dieser Stein kann nicht mit dem Ball sondern nur mit dem Schl&auml;ger
+      selbst zerst&ouml;rt werden.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebigball.gif" WIDTH="32" HEIGHT="24" ALT="Big Ball"></TD>
+    <TD>Der Ball wird gro&szlig;</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemediumball.gif" WIDTH="32" HEIGHT="24" ALT="medium ball"></TD>
+    <TD>mittel</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesmallball.gif" WIDTH="32" HEIGHT="24" ALT="small ball"></TD>
+    <TD>und wieder klein</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebomb.gif" WIDTH="32" HEIGHT="24" ALT="Bomb"></TD>
+    <TD>Dieser Stein explodiert beim Ber&uuml;hren, h&uuml;te Dich vor den
+      Tr&uuml;mmern</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonedonut.gif" WIDTH="32" HEIGHT="24" ALT="Rotor"></TD>
+    <TD>Hier wird ein kleiner Rotor freigesetzt der deinen Schl&auml;ger zu Kleinholz
+      verarbeitet</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonedown.gif" WIDTH="32" HEIGHT="24" ALT="down"></TD>
+    <TD>Abw&auml;rts, gehts nach der Ber&uuml;hrung dieses Steines</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneextra.gif" WIDTH="32" HEIGHT="24" ALT="Extraball"></TD>
+    <TD>Extrab&auml;lle sind begehrt und werden manchmal auch dringend ben&ouml;tigt</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit1.gif" WIDTH="32" HEIGHT="24" ALT="1"></TD>
+    <TD>1 Treffer und der Stein wird zu einem einfachen Stein</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit2.gif" WIDTH="32" HEIGHT="24" ALT="2"></TD>
+    <TD>2 Treffer notwendig</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit3.gif" WIDTH="32" HEIGHT="24" ALT="3"></TD>
+    <TD>3...</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonekill.gif" WIDTH="32" HEIGHT="24" ALT="Killer"></TD>
+    <TD>Eine Ber&uuml;hrung mit dem Schl&auml;ger ist bei diesem Stein nicht
+      anzuraten</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneleveldown.gif" WIDTH="32" HEIGHT="24" ALT="Level down"></TD>
+    <TD>Hier gehts ein Level abw&auml;rts</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonelevelup.gif" WIDTH="32" HEIGHT="24" ALT="Level Up"></TD>
+    <TD>und hier eins rauf, egal wieviele Steine noch vorhanden sind</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonelleft.gif" WIDTH="32" HEIGHT="24" ALT="Left"></TD>
+    <TD>eine kr&auml;ftige Beschleunigung nach links</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemagnetdis.gif" WIDTH="32" HEIGHT="24" ALT="Magnet"></TD>
+    <TD>Noch ist dieser Magnet nicht aktiv</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemagnet.gif" WIDTH="32" HEIGHT="24" ALT="Magnet"></TD>
+    <TD>Dieser Magnet &uuml;bt eine gro&szlig;e Anziehung auf den Ball aus</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonephone.gif" WIDTH="32" HEIGHT="24" ALT="phone"></TD>
+    <TD>Anruf!</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonequestion.gif" WIDTH="32" HEIGHT="24" ALT="???"></TD>
+    <TD>Hier ist noch unsicher was draus wird, oder wieviele Punkte es f&uuml;r
+      einen Treffer gibt.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonered3.gif" WIDTH="32" HEIGHT="24"></TD>
+    <TD>Aus Eins mach Drei. -- Und wie jongliere ich mit all den B&auml;llen???</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonered1.gif" WIDTH="32" HEIGHT="24" ALT="1 Ball"></TD>
+    <TD>da warens nur noch einer.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneslow.gif" WIDTH="32" HEIGHT="24" ALT="SAP"></TD>
+    <TD>Verlangsamt Ball und Schl&auml;ger</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesun.gif" WIDTH="32" HEIGHT="24" ALT="Sun"></TD>
+    <TD>Here comes the Sun, begleitet von einem Totenkopf</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneteleport.gif" WIDTH="32" HEIGHT="24" ALT="Teleport"></TD>
+    <TD>Uuups wo ist er denn? Der Ball wird zu einem anderen der Teleportsteine
+      gebeamt.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneyinyan.gif" WIDTH="32" HEIGHT="24" ALT="Yin Yan"></TD>
+    <TD>Hier gibt es einen gr&ouml;&szlig;eren Schl&auml;ger.</TD>
+  </TR>
+</TABLE>
+<P>
+  <HR>
+<H2>
+  BUGs
+</H2>
+<P>
+Ja es gibt welche (da bin ich mir ganz sicher), sie sind blo&szlig; meiner
+Qualit&auml;tskontrolle entwischt. Falls jemand einen findet dann bitte eine
+<A HREF="mailto: cleder@dcsnet.de">E-Mail an mich</A>!
+<H3>
+  Bekannte Bugs:
+</H3>
+<P>
+Das Umschalten auf eine andere Applikation kann manchmal zum Absturz
+f&uuml;hren. Wenn die Taskleiste auf 'automatisch im Vordergrund' eingestellt
+ist k&ouml;nnen manchmal Probleme auftauchen. &nbsp;Als Workaround kann man
+die einmal mit der linken Maustaste klicken, dann wird die Mausposition wieder
+auf die Mitte des Bildschirms gesetzt. Wenn keine Soundkarte vorhanden ist
+st&uuml;rtzt das Programm mit wildem Gepiepse ab :-(((.
+<P>
+  <HR>
+<H2>
+  Eigene Levels einbinden
+</H2>
+<P>
+Wie jedes gute Spiel hat auch YaAC seinen eigenen Leveleditor mit welchem
+man neue, eigene oder verbesserte Levels kreieren kann (und soll).
+<P>
+Die Levels ab 26 sind f&uuml;r solche Level vorgesehen. allerdings sollte
+man sich vorher s&auml;mtliche Level (auch die &nbsp;oberhalb von 27 ) mal
+angeschaut haben. Teilweise werden da recht nette Effekte pr&auml;sentiert.
+<P>
+Einfach den Leveleditor aufrufen, YAAC.MAP laden und schon kanns losgehen.
+<P>
+Die Bedienung des Leveleditors&nbsp;sollte einigerma&szlig;en intuitiv sein
+(Ich hab mich dabei an den DGC-Map Editor angelehnt). Zu beachten gibt es
+allerdings folgende Punkte:
+<P>
+Finger weg vom ersten Level (Index 0), das wird als Startup-Screen gebraucht.
+<P>
+Die erste und letzte Zeile wird von dem Programm f&uuml;r interne Zwecke
+benutzt. Besser ist zumindest am Anfang diese Zeilen leer zu lassen.
+<P>
+Die erste Zeile wird zum Anzeigen von Statusinformationen genutzt.
+<OL>
+  <LI>
+    Schwerkraft
+  <LI>
+    Multiplikator
+  <LI>
+    1. LIFE-Stein
+  <LI>
+    2. LIFE-Stein
+  <LI>
+    3. LIFE-Stein
+  <LI>
+    High-Score
+  <LI>
+    Level
+</OL>
+<P>
+In der letzten Zeile werden die verbleibenden B&auml;lle angezeigt, die Steine
+die dort plaziert werden werden gel&ouml;scht.
+<P>
+Es kann immer nur einen aktiven Magneten &nbsp;in einem Level geben. Wird
+er zerst&ouml;rt wird der n&auml;chste inaktive Magnet aktiv.
+<P>
+Gro&szlig;e und mittlere B&auml;lle vertragen sich nicht gut mit den
+Mehrfachb&auml;llen.
+<P>
+Es mu&szlig; in jedem Level ein Ausgangspunkt f&uuml;r den Ball und einer
+f&uuml;r den Schl&auml;ger festgelegt werden. Werden keine Ausgangspunkte
+festgelegt kommt der LIFE-Algorhytmus zum tragen und dann wirds krabbelig.
+<P>
+Bei LIFE-Leveln gilt es zu beachten, das Steine die in Spalte, Zeile, 0
+und&nbsp;19 stehen bei einem Generationenwechsel nicht sterben. Die Positionen
+3,4,5 in der ersten Zeile k&ouml;nnen Sie mit den Steinen besetzen, die die
+Generationenabfolge vorgibt. Ein leerer Platz ist dabei gleichbedeutend mit
+einem einfachem Stein.
+<P>
+M&ouml;chte man ein Starfield als Hintergrund mu&szlig; man f&uuml;r das
+entsprechende Level eine 1 x 1 Pixel gro&szlig;e Grafik als Hintergrundimage
+hinterlegen. (die gibt es schon in Level 0, also einfach an die gew&uuml;nschte
+Stelle kopieren. Die Hintergrundbilder und die Animationen werden in der
+YAAC.HCL Datei gespeichert. Um diese zu ver&auml;ndern ben&ouml;tigt man
+den DGC HI-COLOR IMAGE LIBRARY EDITOR.
+<P>
+Hier auch der Aufruf an all diejenigen, die sich am Leveldesign versuchen
+wollen: habt Ihr ein Level erstellt, das euch besonders gut gef&auml;llt
+dann sendet es mir zu, wenn es mir auch zusagt wird es im n&auml;chsten Release
+von YaAC enthalten sein.
+<P>
+  <HR>
+<H2>
+  To Do
+</H2>
+<P>
+Ich betrachte das ganze immer noch als BETA :-) aber zumindest die gr&ouml;bsten
+Bugs sind mittlerweise beseitigt. Am Leveldesign ist noch einiges zu tun
+(Aber daf&uuml;r gibts ja den Editor).
+<H3>
+  Animationen und Grafikdesign
+</H3>
+<P>
+Meine St&auml;rken liegen eher bei der Programmierung als beim Design und
+das sieht man dem Spiel streckenweise auch an. Wenn hier jemand eine Idee,
+oder vieleicht sogar schon fertige Animationen hat, soll er mich bitte
+kontaktieren
+<H3>
+  Sounds
+</H3>
+<P>
+Sounddesign fand bisher fast noch &uuml;berhaupt keins statt (Ich bin absolut
+unmusikalisch). Angedacht ist auch die Sounds abh&auml;ngig von der
+Geschwindigkeit lauter oder leiser abzuspielen, bzw nach Ort des Auftreffens
+einen gewissen Stereoeffekt einzubauen.
+<H3>
+  Neue Steine
+</H3>
+<P>
+Es gibt schon Ideen f&uuml;r neue Steine:
+<UL>
+  <LI>
+    Unsichtbare Steine, die erst bei Ber&uuml;hrung sichtbar werden
+  <LI>
+    Feuer Steine die beim Abschie&szlig;en auch gleich die ganze Umgebung mit
+    abfackeln
+  <LI>
+    unzerst&ouml;rbare Magneten und Teleporter
+  <LI>
+    einen Gummiband Stein, der eine Beschleunigungskraft auf den Ball aus&uuml;bt,
+    die umso str&auml;rker ist je weiter der Ball entfernt ist.
+  <LI>
+    einen Stein der die Bewegungsrichtung der Maus umkehrt
+  <LI>
+    einen Stein der die Mausbewegungen beschleunigt
+  <LI>
+    Windsteine, die eine Kraft von sich weg in eine bestimmte Richtung aus&uuml;ben
+    und so den Ball 'wegblasen'.
+  <LI>
+    Sondersteine, die bestimmte Reaktionen ausl&ouml;sen wie zum Beispiel T&uuml;ren
+    &ouml;ffnen, Laser abschie&szlig;en oder &auml;hnliches
+</UL>
+<H3>
+  Force-Feedback
+</H3>
+<P>
+Sobald ich mir einen neuen Rechner und einen
+Kraftr&uuml;ckkoppelungslustkn&uuml;ppel gekauft hab wird auch das angedacht...
+<H3>
+  Level
+</H3>
+<P>
+Und nat&uuml;rlich neue Level. Bis zu 255 in einer Map Library
+&nbsp;k&ouml;nnens ja werden.....
+<P>
+Der M&ouml;glichkeiten und Pl&auml;ne gibt es also viele. Ob diese Erweiterungen
+realisiert werden h&auml;ngt nat&uuml;rlich haupts&auml;chlich von den
+Benutzerreaktionen ab. Viel angefragte Erweiterungen haben nat&uuml;rlich
+die besseren Chancen, bekomme ich kein
+<A HREF="mailto: cleder@dcsnet.de">Feedback </A>bleibt alles so wie es ist.
+<P>
+to be continued....
+<P>
+<A HREF="mailto: cleder@dcsnet.de">Christian Ledermann</A> Dezember 2000
+</BODY></HTML>

@@ -1,0 +1,509 @@
+<HTML>
+<HEAD>
+  <META name="author" content="Christian Ledermann">
+  <META name="description" content="Yet another Arcanoid clone is a breakout style game developed with DELPHI and DGC">
+  <META name="keywords" content="Game DELPHI PASCAL Breakout Arcanoid Sourcecode DGC">
+  <TITLE>YaAc - Yet another Arcanoid clone (english)</TITLE>
+</HEAD>
+<BODY>
+<H1>
+  YaAC the game
+</H1>
+<P>
+YaAC - Yet another Arcanoid Clone -&nbsp;is a Breakout/Arcanoid style game.
+All you got to do is to hit the bricks with the ball. When you destroyed
+all the bricks a level is finished. You move your paddle with the mouse.
+The stronger you hit the ball the higher is the acceleration. Real simple,
+so get going.
+<P>
+Tom Wilson of <A HREF="http://turbo.gamedev.net/">turbo</A> wrote about YaAC:
+<P>
+<CITE>DGC Breaks Out....</CITE>
+<P>
+<CITE>Christian Ledermann send in a Delphi Games Creator breakoutstyle game
+with full source AND a level editor. The ZIP File contains the game, source,
+level editor and a bit of <A HREF="Index.html">german documentation</A>.
+Christian does add a few features to the genre, like gravity and a 4 directional
+paddle. It's a great example of a hobbyist programmer expanding a style.</CITE>
+<H2>
+  License
+</H2>
+<P>
+This program is free software; you can redistribute it and/or modify it under
+the terms of the <A HREF="GPL.html">GNU General Public License</A>. as published
+by the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+<P>
+To recompile YaAC you will need Delphi 3 (or higher) and the
+<A HREF="http://info.ex.ac.uk/~PMBearne/DGC.html">DGC</A> components. Direct
+input is handled in the unit
+<A HREF="http://www.delphi-jedi.org/DelphiGraphics/DirectX/DISimple.zip">DirectInputAS</A>
+which you will find on <A HREF="http://www.delphi-jedi.org/">Delphi-Jedi
+</A>in the DISimple Demo of Arne Sch&auml;pers.
+<P>
+The backgrounds were designed with
+<A HREF="http://www.users.qwest.net/~sharman1/stile99.htm">Harm's sTile99</A>
+<H2>
+  Download
+</H2>
+<P>
+<A HREF="Yaac10.zip">YaAC 1.0</A> - The Game itself
+<P>
+<A HREF="mapedit.zip">YaAC Leveleditor </A>- You will need that one if you
+want to create your own levels. The Editor is still in an (early) beta stage
+but I think it is OK for a start.
+<P>
+  <HR>
+<H2>
+  Installation
+</H2>
+<P>
+Just copy the files YAAC.EXE and YAAC.HCL into a directory of your choice.
+That's all, no further setup needed.
+<H2>
+  System requirements
+</H2>
+<P>
+In order to play YaAC you will need a more or less up to date hard and software.
+Minimum is a Pentium 166 a Video Card that can display 640 * 480 in HiColor
+(16 bit), a direct sound compatible soundcard and a mouse. It runs with Window
+9X with DirectX 6.1 or later. (I did not test it but I assume it will run
+on Windows ME and Win 2000)
+<H2>
+  Controls
+</H2>
+<P>
+You operate the paddle with your mouse (any questions?).
+<P>
+Press "<B>N</B>" to start a <B>n</B>ew game, "<B>S</B>" <B>s</B>aves the
+current game&nbsp;(well actually only your score and the number of the level
+you are in, but not the state of the current level), "<B>L</B>" loads a previous
+saved game, "<B>P</B>" pauses the game, "<B>Z</B>" shows the HiScores and
+"<B>ESC</B>" ends the game. There are <B>C</B>heats of course but you will
+have to find them yourself (have a look at the code).
+<H2>
+  Status display
+</H2>
+<P>
+<IMG SRC="Ball01.gif" ALT="Ball" WIDTH="16" HEIGHT="16"> the &nbsp;number
+of balls left are displayed on the lower edge of the screen
+<P>
+<IMG SRC="G10.gif" ALT="Schwerkraft" WIDTH="32" HEIGHT="24">In the left upper
+corner of the screen the current G-force is displayed.
+<P>
+<IMG SRC="4x.gif" ALT="3x" WIDTH="32" HEIGHT="24">If you are lucky all your
+points will score 2,3, or 4 times the value of the bricks.
+<P>
+And of course your score and the number of the current level is displayed
+<H2>
+  The Bricks
+</H2>
+<P>
+Every kind of brick has its own features. some of them are massive and cannot
+be destroyed, others break at first contact, and some of them you have to
+hit several times in order to get rid of them. Bricks may cause actions such
+as switching on or of the g-force, accelerating or decelerating the ball
+or giving you a bigger paddle. Some Bricks may not be destroyed by the ball
+but with your paddle other bricks will destroy your paddle when you touch
+them. Magnetic bricks will have an (fatal???) attraction to your ball, teleporter
+will beam your ball to another place.
+<P>
+In a few of the Levels your bricks will get alive, so that every 0.7 seconds
+you will have to deal with the next generation of bricks (based on the LIFE
+2-3-3 algorithm).
+<P>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    The bricks
+  </CAPTION>
+  <TR>
+    <TD><IMG SRC="Stone.gif" WIDTH="32" HEIGHT="24" ALT="Einfacher Stein"></TD>
+    <TD>A simple stone. It only has to be hit once.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesolid.gif" WIDTH="32" HEIGHT="24" ALT="Solider Stein"></TD>
+    <TD>Solid stone. You cannot destroy it.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone00g.gif" WIDTH="32" HEIGHT="24" ALT="Zero G"></TD>
+    <TD>turns off the G-force</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone05g.gif" WIDTH="32" HEIGHT="24" ALT="5 G"></TD>
+    <TD>turns a moderate g-force on (like on mars).</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone10g.gif" WIDTH="32" HEIGHT="24" ALT="10 G"></TD>
+    <TD>Normal G-force (for an earthling ;-))</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone20g.gif" WIDTH="32" HEIGHT="24" ALT="20 G"></TD>
+    <TD>high G-force</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone1x.gif" WIDTH="32" HEIGHT="24" ALT="1X"></TD>
+    <TD>single score only</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone2x.gif" WIDTH="32" HEIGHT="24" ALT="2X"></TD>
+    <TD>From this time forward all your points score double</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone3x.gif" WIDTH="32" HEIGHT="24" ALT="3X"></TD>
+    <TD>..three times</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone4x.gif" WIDTH="32" HEIGHT="24" ALT="4X"></TD>
+    <TD>.. four times.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stone22g.gif" WIDTH="32" HEIGHT="24" ALT="?G"></TD>
+    <TD>The g-force will change in intensity and direction from time to time.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneapple.gif" WIDTH="32" HEIGHT="24" ALT="Apple"></TD>
+    <TD>Your paddle shrinks, but do not worry it will grow again .</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebat.gif" WIDTH="32" HEIGHT="24" ALT="Bat"></TD>
+    <TD>You cannot destroy this Stone with the ball, but with your paddle.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebigball.gif" WIDTH="32" HEIGHT="24" ALT="Big Ball"></TD>
+    <TD>if you ever need &nbsp;a big</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemediumball.gif" WIDTH="32" HEIGHT="24" ALT="medium ball"></TD>
+    <TD>medium</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesmallball.gif" WIDTH="32" HEIGHT="24" ALT="small ball"></TD>
+    <TD>or a small ball....</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonebomb.gif" WIDTH="32" HEIGHT="24" ALT="Bomb"></TD>
+    <TD>This stone will explode, watch out for the remains</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonedonut.gif" WIDTH="32" HEIGHT="24" ALT="Rotor"></TD>
+    <TD>A small rotor appears witch will put an end to your paddle if you happen
+      to touch it</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonedown.gif" WIDTH="32" HEIGHT="24" ALT="down"></TD>
+    <TD>down we go</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneextra.gif" WIDTH="32" HEIGHT="24" ALT="Extraball"></TD>
+    <TD>sometimes you just need an extra-ball</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit1.gif" WIDTH="32" HEIGHT="24" ALT="1"></TD>
+    <TD>1 hit left then this stone will turn out to be an simple stone</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit2.gif" WIDTH="32" HEIGHT="24" ALT="2"></TD>
+    <TD>2 hits left</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonehit3.gif" WIDTH="32" HEIGHT="24" ALT="3"></TD>
+    <TD>3...</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonekill.gif" WIDTH="32" HEIGHT="24" ALT="Killer"></TD>
+    <TD>Please do not touch</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneleveldown.gif" WIDTH="32" HEIGHT="24" ALT="Level down"></TD>
+    <TD>The last level was not so bad, was it? Destroying this stone will get
+      you back there.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonelevelup.gif" WIDTH="32" HEIGHT="24" ALT="Level Up"></TD>
+    <TD>Next level, up we go.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonelleft.gif" WIDTH="32" HEIGHT="24" ALT="Left"></TD>
+    <TD>a bit of acceleration to the left.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemagnetdis.gif" WIDTH="32" HEIGHT="24" ALT="Magnet"></TD>
+    <TD>This magnet is not yet active</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonemagnet.gif" WIDTH="32" HEIGHT="24" ALT="Magnet"></TD>
+    <TD>but this one surely is.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonephone.gif" WIDTH="32" HEIGHT="24" ALT="phone"></TD>
+    <TD>Do you get nervous when the phone rings?</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonequestion.gif" WIDTH="32" HEIGHT="24" ALT="???"></TD>
+    <TD>You can never be sure what this stone turns out to be or how much points
+      you get destroying it.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonered3.gif" WIDTH="32" HEIGHT="24"></TD>
+    <TD>Three Balls may be more than you can handle at a time</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonered1.gif" WIDTH="32" HEIGHT="24" ALT="1 Ball"></TD>
+    <TD>No matter the number of Balls in play before, after you hit that one
+      only one is left</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneslow.gif" WIDTH="32" HEIGHT="24" ALT="SAP"></TD>
+    <TD>Deceleration</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stonesun.gif" WIDTH="32" HEIGHT="24" ALT="Sun"></TD>
+    <TD>Here comes the Sun, and a skull</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneteleport.gif" WIDTH="32" HEIGHT="24" ALT="Teleport"></TD>
+    <TD>Ooops where is it? the Ball gets teleported to a randomly chosen teleport
+      brick.</TD>
+  </TR>
+  <TR>
+    <TD><IMG SRC="Stoneyinyan.gif" WIDTH="32" HEIGHT="24" ALT="Yin Yan"></TD>
+    <TD>Your paddle grows.</TD>
+  </TR>
+</TABLE>
+<P>
+  <HR>
+<H2>
+  BUGs
+</H2>
+<P>
+I am sure that there still are a few. If you catch one drop me an
+&nbsp;<A HREF="mailto: cleder@dcsnet.de">e-mail</A>!
+<H3>
+  Known Bugs and issues:
+</H3>
+<P>
+Tabbing away to another application will sometimes crash the game (fortunately
+not the system). If you have problems with your taskbar try leftclicking
+the mouse or change the properties of your taskbar. If you do not have a
+soundcard, YaAC will crash :-(((.
+<P>
+  <HR>
+<H2>
+  Building your own levels
+</H2>
+<P>
+Like every other good game YaAC comes with an leveleditor, that enables you
+to create your own levels, or modify existing Levels.
+<P>
+Levels above level 26 are meant to be modified. Have a look at all the levels
+and do not make your own levels to complicated or to easy.
+<P>
+Just start YaACMapEdtor and get going.
+<P>
+  <HR>
+<H3>
+  A short introduction to the LevelEditor
+</H3>
+<P>
+The level editor is optimized &nbsp;(i.e. you do not need to load the graphic
+library) to work with YaAC Levels but you may use it for any kind of map
+you created with the DGC MAP EDITOR
+<P>
+<I>features written in italics are not yet implemented</I>
+<H6>
+  Icons
+</H6>
+<H6>
+  Main Bar
+</H6>
+<P>
+Most of the icons should be self explanatory. The Main Icon bar contains
+4 icons. These icons are used to create a new library, open an existing library,
+save the current library, and load in an Image Library to use as tiles.
+<P>
+You can use the scroll bars to move around if you wish.
+<P>
+The Clear Map icon allows you to clean a map. This action will use the currently
+selected tile as the clearing tile.
+<P>
+The Map Properties Icon will allow you to change the basic properties of
+the current map. You can rename a map with this option.
+<P>
+The Remap Tile icon will allow you to change all references to a tile to
+another tile.
+<P>
+The Transparency Icon (toggle) will allow you to view the map over a background
+color so that you can get a rough idea on what the map will look like when
+drawn in the game.
+<P>
+The Grid Lines Icon (toggle) will turn on/off grid lines. This may make it
+easier for you when drawing your maps, especially with smaller tiles.
+<P>
+The Color Block allows you to change the Transparent color used for viewing
+in transparency mode.
+<P>
+The Zoom Percentage selector allows you to view/edit your map at different
+levels of zoom. 100% is normal. You can select a lower amount to fit more
+of the map on the screen or a higher value if you need to look at the map
+up close.
+<H6>
+  Tile Bar
+</H6>
+<P>
+On top of the tile bar is a single tile display which shows the currently
+selected tile. You can select a tile to draw with by clicking on it in the
+tile bar.
+<P>
+Note: While working on a map, you can click the right mouse button on a tile
+in your map to switch to that tile saving you a small amount of time.
+<H6>
+  Library Bar
+</H6>
+<P>
+<I>The Library Bar has four Icons. The first Icon is used to add a new map
+to the library. The second is used to delete a map from the library. You
+can arrange the order of the maps by using the last two icons.</I>
+<H6>
+  Status Bar
+</H6>
+<P>
+The Status Bar shows some basic details about the map you are working on.
+In the first pane, you will see the name of the map library that you are
+working on. The second pane is the map index that you are working on. The
+third pane displays the size of the map. The fourth pane shows the current
+cursor position on the map and the fifth pane shows the current tile under
+the cursor.
+<H6>
+  Menu Items
+</H6>
+<P>
+Most of the menu items have a corresponding Icon.
+<P>
+  <HR>
+<P>
+Please be sure you follow this basic rules when designing a new Level:
+<P>
+Please do not modify the first level (Index 0), It is used internally as
+a startupscreen.
+<P>
+The first and the last rows of each level are used for the display of status
+information etc. I recommend not to alter these rows unless you know what
+you are doing.
+<P>
+The contents of the first row is.
+<OL>
+  <LI>
+    G-Force
+  <LI>
+    Multiplikator
+  <LI>
+    1. LIFE-Stone
+  <LI>
+    2. LIFE-Stone
+  <LI>
+    3. LIFE-Stone
+  <LI>
+    High-Score
+  <LI>
+    Level
+</OL>
+<P>
+The last row displays the balls you have left. Any tile you place here will
+be overwritten.
+<P>
+There can be only one active magnet per level. When it is destroyed the next
+magnet gets active.
+<P>
+In each level you have to define a starting point for your ball and your
+paddle. If you do not define these point you will get a LIFE Level (and I
+do mean that, The algorithm it is based on is the good old Life 2-3-3)
+<P>
+If you want to design a LIFE-Level be aware of the following: The bricks
+in the rows, columns 0 and 19 will not die at a generation Change regardless
+how many other bricks are around them. In the Columns 3, 4 and 5 of the uppermost
+row (0) you may place the tiles that determine the kind of respawning bricks.
+No tile means that a simple brick will appear.
+<P>
+Backgrounds &nbsp;and animations are stored in the YaAC.HCL - DGC HI-COLOR
+IMAGE LIBRARY. To change them you will need the DGC HI-COLOR IMAGE LIBRARY
+EDITOR. If you want a starfield instead of a static background just change
+the image of the according level into a 1 by 1 pixel image (the index for
+the background is currently 36 + Level)
+<P>
+If you design a level that you think is real cool send it to me. I will include
+it in the next release of YaAC.
+<P>
+  <HR>
+<H2>
+  To Do
+</H2>
+<P>
+I still think of YaAC as a BETA Release, but meanwhile at least most of the
+bugs are fixed and it runs stable on almost every machine that meets the
+system requirements. Leveldesign is still a major issue but that's what the
+level editor is for.
+<H3>
+  Animations and graphics
+</H3>
+<P>
+I do think I am better at programming than at graphic design. So if you have
+ideas how i could make YaAC look better, or some animations you would like
+to add to YaAC please do not hesitate to contact me.
+<H3>
+  Sounds
+</H3>
+<P>
+I did not yet do any kind of real sound design or implemented &nbsp;background
+music (the DGCMidi Component is not yet working with Delphi 3 any suggestions?).
+I thought about adjusting the sounds to the speed of the ball (the higher
+the velocity of the ball the louder the sound when it hits a brick) or giving
+the sound a stereo effect depending &nbsp;on where the sound originates.
+<H3>
+  New Bricks
+</H3>
+<P>
+There are some ideas for new kinds of bricks already:
+<UL>
+  <LI>
+    Invisible Bricks
+  <LI>
+    Bricks that set other bricks on fire while they burn
+  <LI>
+    undestroyable magnets and teleporters
+  <LI>
+    a rubberband Brick, that accelerates the Ball the more the further it gets
+    away from the brick
+  <LI>
+    a brick that toggles the direction of the paddle.
+  <LI>
+    a brick that will accelerate your mouse moves
+  <LI>
+    wind bricks, with a force field in a specific direction thus blowing the
+    ball away from them
+  <LI>
+    a brick that blocks the Ball but not the paddle.
+  <LI>
+    bricks that kill the Ball
+</UL>
+<H3>
+  Force-Feedback
+</H3>
+<P>
+As soon as I get a new computer or at least a Forcefeedback joystick I think
+this will be a major issue for future releases.
+<H3>
+  Level
+</H3>
+<P>
+And of course more and more refined levels. A Map Library can store up to
+255 Levels....
+<P>
+So there are a lot of &nbsp;ideas for future releases. Please give me a
+<A HREF="mailto: cleder@dcsnet.de">feedback </A>&nbsp; what you think about
+my little game, what sucks and what features you want to have implemented
+in future versions, or implement a version of your own ;-)
+<P>
+to be continued....
+<P>
+<A HREF="mailto: cleder@dcsnet.de">Christian Ledermann</A> December 2000
+</BODY></HTML>

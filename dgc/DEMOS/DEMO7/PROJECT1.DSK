@@ -1,0 +1,214 @@
+[MainWindow]
+Create=1
+Visible=1
+State=2
+Left=0
+Top=0
+Width=638
+Height=106
+MaxLeft=14
+MaxTop=58
+MaxWidth=615
+MaxHeight=106
+
+[ProjectManager]
+Column0Width=75
+Column1Width=125
+Column2Width=125
+
+[PropertyInspector]
+Create=1
+Visible=1
+State=0
+Left=10
+Top=113
+Width=190
+Height=306
+SplitPos=84
+
+[History_14]
+Count=32
+H0=id
+H1=category
+H2=items
+H3=pleasurecount
+H4=femalename
+H5=temp
+H6=memo1
+H7=memo1.seltext
+H8=Seltext
+H9=txtpos
+H10=memo1.selstart
+H11=i+11
+H12=playersgender[currentplayer]
+H13=playersgender(currentplayey)
+H14=i
+H15=seconds
+H16=hc
+H17=firstnames
+H18=firstname
+H19=surname
+H20=ampm
+H21=supergrid1.cells[6,i]
+H22=totalgross
+H23=TEMPSTR
+H24=strokesarray
+H25=combobox1.items.objects[0]
+H26=combobox1.items.objects[i]
+H27=combobox1.items
+H28=combobox1.items.strings(0)
+H29=combobox1.items.strings
+H30=combobox1.items.strings[0]
+H31=combobox1.items[0]
+
+[History_19]
+Count=32
+H0=d:\dgcb2\bin\bmputil.pas
+H1=d:\dgcb2\demos\newzap\unit1.pas
+H2=d:\dgcb2\demos\asteroids\unit1.pas
+H3=d:\dgcb2\demos\zapper2\unit1.pas
+H4=d:\dgcb2\bin\dgcspts.pas
+H5=d:\dgcb2\demos\neweng\project1.dpr
+H6=d:\dgcb2\demos\demo4\project1.dpr
+H7=f:\win95\delphi 2.0\dcg\demos\roids\project1.dpr
+H8=f:\win95\delphi 2.0\dcg\bin\dgc.pas
+H9=f:\win95\delphi 2.0\dcg\bin\dgcspts.pas
+H10=f:\win95\delphi 2.0\dcg\bin\dgcfxlib.pas
+H11=f:\win95\delphi 2.0\dcg\demos\asteroids\dgcb2\demos\asteroids\project1.dpr
+H12=f:\windows\projects\golfdate\golf.pas
+H13=f:\windows\projects\pleasure\pleasure.dpr
+H14=f:\win95\delphi 2.0\dcg\demos\oct3rd\project1.dpr
+H15=f:\win95\delphi 2.0\dcg\bin\dsound.pas
+H16=f:\win95\delphi 2.0\dcg\demos\appear\project1.dpr
+H17=f:\win95\delphi 2.0\dcg\fxlibedit\fxlib.dpr
+H18=f:\win95\delphi 2.0\dcg\bin\bmputil.pas
+H19=f:\win95\delphi 2.0\dcg\bin\dgcilib.pas
+H20=f:\win95\delphi 2.0\dcg\bin\ddraw.pas
+H21=f:\win95\delphi 2.0\dcg\demos\demo1\project1.dpr
+H22=f:\win95\delphi 2.0\dcg\demos\new zapper\zapper.dpr
+H23=f:\win95\delphi 2.0\dcg\demos\demo5\demo5.pas
+H24=f:\win95\delphi 2.0\dcg\bin\hiscore.pas
+H25=f:\win95\delphi 2.0\dcg\demos\newdemo\project1.dpr
+H26=f:\win95\delphi 2.0\dcg\bin\dgcstar.pas
+H27=f:\win95\delphi 2.0\dcg\demos\hiscore\project1.dpr
+H28=f:\win95\delphi 2.0\dcg\demos\neweng\unit1.pas
+H29=f:\win95\delphi 2.0\dcg\demos\neweng\project1.dpr
+H30=f:\windows\projects\pleasure\potluck.pas
+H31=c:\delphi\golfdate\compres.pas
+
+[History_27]
+Count=1
+H0=1b:2563
+
+[History_37]
+Count=32
+H0=f:\windows\projects\pleasure\potluck.pas
+H1=f:\windows\projects\pleasure\pzdlg.pas
+H2=f:\windows\projects\pleasure\cloths.pas
+H3=f:\windows\projects\pleasure\details.pas
+H4=f:\windows\projects\pleasure\plmain.pas
+H5=f:\windows\projects\golfstat\statmain.pas
+H6=f:\windows\projects\golfdate\card.pas
+H7=f:\windows\projects\golfdate\memrpt.pas
+H8=f:\windows\projects\golfdate\phonerpt.pas
+H9=f:\windows\projects\golfdate\fullres.pas
+H10=f:\windows\projects\golfdate\test.pas
+H11=f:\windows\projects\golfdate\wait.pas
+H12=f:\windows\projects\golfdate\chscomp.pas
+H13=f:\windows\projects\golfdate\selcomp.pas
+H14=f:\windows\projects\golfdate\handicap.pas
+H15=f:\windows\projects\golfdate\compres.pas
+H16=f:\windows\projects\diary\unit2.pas
+H17=c:\delphi\golfdate\memdet.pas
+H18=c:\delphi\golfdate\config.pas
+H19=f:\windows\projects\golfdate\backup.pas
+H20=f:\windows\projects\golfdate\fmxutils.pas
+H21=c:\delphi\lib\calendar.pas
+H22=a:\calendar.pas
+H23=c:\delphi\golfdate\common.pas
+H24=f:\windows\projects\golfdate\dodiary.pas
+H25=c:\delphi\golfdate\prnprev.pas
+H26=f:\windows\projects\golfdate\diary.pas
+H27=f:\windows\projects\golfdate\divtwo.pas
+H28=f:\windows\projects\golfdate\firstdiv.pas
+H29=f:\windows\delphi\lib\spin.pas
+H30=f:\windows\projects\golfdate\entry.pas
+H31=f:\windows\projects\golfdate\golf.pas
+
+[History_38]
+Count=1
+H0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[Closed Files]
+File_0=D:\dgcb2\DEMOS\Asteroids\Unit1.pas,1,267,94,164
+File_1=D:\dgcb2\DEMOS\zapper2\Unit1.pas,1,1,1,1
+File_2=D:\dgcb2\BIN\dgcspts.pas,4,1156,28,1167
+File_3=D:\dgcb2\DEMOS\DEMO4\Unit1.pas,8,95,28,102
+
+[Modules]
+Module0=D:\dgcb2\IMAGES\intdem\Unit1.pas
+Module1=D:\dgcb2\BIN\Bmputil.pas
+Module2=D:\dgcb2\DEMOS\newzap\Unit1.pas
+Module3=D:\dgcb2\IMAGES\intdem\Project1.dpr
+Count=4
+EditWindowCount=1
+
+[Form0]
+FormState=1
+
+[Form1]
+FormState=0
+
+[Form2]
+FormState=1
+
+[Form3]
+FormState=0
+
+[EditWindow0]
+Create=1
+Visible=1
+State=0
+Left=210
+Top=185
+Width=430
+Height=300
+SplitPos=50
+MessagePane=0
+ViewCount=3
+CurrentView=0
+View0=0
+View1=1
+View2=2
+
+[View0]
+Module=0
+CursorX=26
+CursorY=49
+TopLine=47
+LeftCol=1
+
+[View1]
+Module=1
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[View2]
+Module=2
+CursorX=10
+CursorY=537
+TopLine=535
+LeftCol=1
+
+[Watches]
+Count=5
+Watch0='items',0,0,11,1
+Watch1='category',0,0,11,1
+Watch2='id',0,0,11,1
+Watch3='femalename',0,0,0,1
+Watch4='temp',0,0,11,1
+
+[Breakpoints]
+Count=0
