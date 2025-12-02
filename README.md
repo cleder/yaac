@@ -5,7 +5,7 @@ The zip-file contains the game, source, level editor and a bit of documentation.
 It does add some new features to the genre, like gravity and a 4 directional paddle.
 77 Levels included.
 
-This is a very old game of mine, which I always wanted to convert to  a modern framework.
+This is a very old game of mine, which I -always wanted to convert to  a modern framework- [currently port](https://github.com/cleder/brkrs/) to [Rust 🦀️](https://rust-lang.org/) and [Bevy 🐤](https://bevy.org/).
 Before it vanishes I thought it would be a good idea to move it to github.
 
 It is known to work on Microsoft Windows up to 2000 and IIRC it compiles
